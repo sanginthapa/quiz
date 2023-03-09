@@ -34,7 +34,7 @@ class Home extends BaseController
                 return 'email format didnot match';
             }else{
                 $model= new StudentModel();
-                $exist=$model->find($data['email']);
+                $model->find($data['email']);
                 $num_rows = $model->countAllResults();
                 if($num_rows>0){
                     $session = \Config\Services::session();
@@ -57,8 +57,11 @@ class Home extends BaseController
 
     public function quizStart(){
         $session = \Config\Services::session();
-        echo "Welcome, " . $session->get('active_email') . "!";
-        // $variable_value = $session->get('active_email');
+        $variable_value = $session->get('active_email');
+        return view('pages/quiz',['user'=>$variable_value]);
+    }
+
+    public function keeper(){
         $db=db_connect();
         // $qn_model= new QuestionModel($db);
         // $quiz_questions=$qn_model->all();
