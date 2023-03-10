@@ -168,3 +168,25 @@ ORDER BY `question_id`, `option_id`', [...], false)
 10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
 11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-10 04:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-10 04:26:27 --> Array to string conversion
+in SYSTEMPATH\Database\Query.php on line 329.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'SYSTEMPATH\\Database\\Query.php', 329)
+ 2 SYSTEMPATH\Database\Query.php(329): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(310): CodeIgniter\Database\Query->matchNamedBinds('SELECT `question_id`, `question`, `option_id`, `option`
+FROM `quiz_questions`
+JOIN `options_table` ON `quiz_questions`.`question_id` = `options_table`.`question_id`
+WHERE `question_id` IN :question_id:
+ORDER BY `question_id`, `option_id`', [...])
+ 4 SYSTEMPATH\Database\Query.php(159): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Database\BaseConnection.php(605): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `question_id`, `question`, `option_id`, `option`
+FROM `quiz_questions`
+JOIN `options_table` ON `quiz_questions`.`question_id` = `options_table`.`question_id`
+WHERE `question_id` IN :question_id:
+ORDER BY `question_id`, `option_id`', [...], false)
+ 7 APPPATH\Controllers\Home.php(78): CodeIgniter\Database\BaseBuilder->get()
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizStart()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
