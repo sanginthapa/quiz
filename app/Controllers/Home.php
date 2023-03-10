@@ -9,22 +9,29 @@ class Home extends BaseController
 {
     public function index()
     {
+        $session = \Config\Services::session();
+        if($session->get('active_email')!=''){
+            $session->remove('variable_name');
+            $session->destroy();
+        }else{
+            $session->destroy();
+        }
         return view('pages/home');
     }
-
-
+    
+    
     public function save_data()
     {
         if($this->request->getMethod()=='post'){
             $data = [
-                'name' => $this->request->getPost('student_name'),
+                'student_name' => $this->request->getPost('student_name'),
                 'email' => $this->request->getPost('email'),
                 // Add other fields here
             ];
 
             $validation = \Config\Services::validation();
             $validation->setRules([
-                'name' => 'required',
+                'student_name' => 'required',
                 'email' => 'required|valid_email',
                 // Add validation rules for other fields here
             ]);
@@ -33,8 +40,9 @@ class Home extends BaseController
                 // Validation failed, show error message or redirect to form page
                 return 'email format didnot match';
             }else{
-                $model= new StudentModel();
-                $model->find($data['email']);
+                $db=db_connect();
+                $model= new StudentModel($db);
+                $model->where('email',$data['email']);
                 $num_rows = $model->countAllResults();
                 if($num_rows>0){
                     $session = \Config\Services::session();
