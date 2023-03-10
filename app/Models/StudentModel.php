@@ -19,4 +19,14 @@ class StudentModel extends Model
   protected $createdField  = 'created_at';
   protected $updatedField  = 'updated_at';
   protected $deletedField  = 'deleted_at';
+
+  public function getStudentId($email){
+    $student_id = $this->where('email', $email)->first();
+    // print_r($student_id);
+        if ($student_id) {
+            return $student_id['student_id'];
+        } else {
+            return null;
+        }
+  }
 }

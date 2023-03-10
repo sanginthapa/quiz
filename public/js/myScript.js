@@ -8,8 +8,15 @@ window.onload = function () {
 };
 // counter
 $(document).ready(function () {
+  //for selection quize option
+  $(".select_option").on('click',function(){
+    var optn_val = $(this).attr('data-optn_id');
+    $("#option_id").val(optn_val);
+  });
+
+  $(".select_option:first").attr("required","required");
   //timer section
-  var count = 20;
+  var count = 16;
   var interval = setInterval(function () {
     count--;
     if (count <= 5) {
@@ -24,8 +31,8 @@ $(document).ready(function () {
     }
     $("#timeout").text(count);
     if (count == 0) {
-      // clearInterval(interval); //uncomment to stop timer
-      count = 20;
+      clearInterval(interval); //uncomment to stop timer
+      // count = 15;
       // location.reload();
       // add your code here to perform an action when the timer reaches zero
     }

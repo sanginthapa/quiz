@@ -1,0 +1,71 @@
+ERROR - 2023-03-12 02:21:27 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*) AS attempted
+FROM `quiz_sessions`
+JOIN `students_table` ON `quiz_sessions`...' at line 4 in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `quiz_se...', 0)
+#1 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `quiz_se...')
+#2 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `quiz_se...')
+#3 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `quiz_se...', Array, false)
+#4 C:\xampp\htdocs\ci_projects\quiz\app\Models\QuizModel.php(66): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci_projects\quiz\app\Controllers\Home.php(333): App\Models\QuizModel->viewIndividualResult('*', '1')
+#6 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php(934): App\Controllers\Home->viewIndividualScore('*', '1')
+#7 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci_projects\quiz\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-12 02:21:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '*) AS attempted
+FROM `quiz_sessions`
+JOIN `students_table` ON `quiz_sessions`...' at line 4
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `quiz_sessions`.`session_id`, `quiz_sessions`.`student_id`, `students_table`.`student_name`, `quiz_sessions`.`started_at`, `quiz_sessions`.`ended_at`, `quiz_sessions`.`score`, `quiz_sessions`.`is_completed`, TIMEDIFF(quiz_sessions.started_at, quiz_sessions.ended_at) AS time_consumed, (SELECT COUNT(question_attempts.attempt_id) AS totalAttempt 
+                       FROM question_attempts 
+                       INNER JOIN quiz_sessions ON quiz_sessions.session_id = question_attempts.session_id 
+                       WHERE quiz_sessions.session_id = *) AS attempted
+FROM `quiz_sessions`
+JOIN `students_table` ON `quiz_sessions`.`student_id` = `students_table`.`student_id`
+WHERE `quiz_sessions`.`student_id` = :quiz_sessions.student_id:
+AND `quiz_sessions`.`session_id` = :quiz_sessions.session_id:', [...], false)
+ 2 APPPATH\Models\QuizModel.php(66): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(333): App\Models\QuizModel->viewIndividualResult('*', '1')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->viewIndividualScore('*', '1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-12 02:23:10 --> Too few arguments to function App\Controllers\Home::viewIndividualScore(), 1 passed in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php on line 934 and exactly 2 expected
+in APPPATH\Controllers\Home.php on line 330.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->viewIndividualScore('1')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-12 02:27:24 --> Too few arguments to function App\Controllers\Home::viewIndividualScore(), 1 passed in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php on line 934 and exactly 2 expected
+in APPPATH\Controllers\Home.php on line 330.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->viewIndividualScore('1')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-12 02:27:27 --> Too few arguments to function App\Controllers\Home::viewIndividualScore(), 1 passed in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php on line 934 and exactly 2 expected
+in APPPATH\Controllers\Home.php on line 330.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->viewIndividualScore('1')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-12 03:01:20 --> Too few arguments to function App\Controllers\Home::viewIndividualScore(), 1 passed in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php on line 934 and exactly 2 expected
+in APPPATH\Controllers\Home.php on line 334.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->viewIndividualScore('5')
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-12 04:00:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:02:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-12 04:03:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

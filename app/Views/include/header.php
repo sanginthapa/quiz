@@ -24,7 +24,10 @@
             <a class="nav-link active" aria-current="page" href="/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/home/test">View Result</a>
+            <a class="nav-link" href="/home/viewIndividualScore">View Result</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/home/quizQuestions">View Questions</a>
           </li>
         </ul>
       </div>
