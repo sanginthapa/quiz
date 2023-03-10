@@ -29,7 +29,7 @@
             <div class="col-12">
                 <div class="col-12 p-4 d-flex justify-content-between">
                     <div class="col-10 h4 text-center">Q. What is question?  </div>
-                    <div class="col-2 text-end">Time Left</div>
+                    <div class="col-2 text-end">Time Left : <strong id="timeout">20</strong></div>
                 </div>
                 <div class="col-12 text-center">
                     <img src="/assets/images/team.jpg" alt="" style="height:auto;width:250px" >

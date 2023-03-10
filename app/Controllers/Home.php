@@ -47,14 +47,14 @@ class Home extends BaseController
                 if($num_rows>0){
                     $session = \Config\Services::session();
                     $session->set('active_email', $data['email']);
-                    return redirect()->to('home/quizStart');;
+                    return redirect()->to('/home/quizStart');;
                 }else{
                     if($model->save($data)){
                         $session = \Config\Services::session();
                         $session->set('active_email', $data['email']);
-                        return redirect()->to('home/quizStart');;
+                        return redirect()->to('/home/quizStart');;
                     }else{
-                        return redirect()->to('home');;
+                        return redirect()->to('/home');;
                     }
                 }
             }
