@@ -1,3 +1,4 @@
+use quiz;
 INSERT INTO quiz_questions (question_id, question) VALUES
 (1, 'Capital of Spain'),
 (2, 'Color of the grass'),
