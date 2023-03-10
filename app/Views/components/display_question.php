@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="col text-center">Question <strong>1</strong> of 15 </div>
-        <div class="col text-end"><a type="button" class="btn-close" disabled aria-label="Close"></a>
+        <div class="col text-end"><a type="button" class="btn-close" id="closeQuiz" disabled aria-label="Close"></a>
         <!-- close --></div>
     </div>
     <!-- top bar section-->
