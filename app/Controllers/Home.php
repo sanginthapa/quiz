@@ -4,6 +4,8 @@ namespace App\Controllers;
 use App\Models\StudentModel;
 use App\Models\QuestionModel;
 use App\Models\OptionModel;
+use App\Models\QuizModel;
+use CodeIgniter\Controller;
 
 class Home extends BaseController
 {
@@ -67,6 +69,23 @@ class Home extends BaseController
         $session = \Config\Services::session();
         $variable_value = $session->get('active_email');
         return view('pages/quiz',['user'=>$variable_value]);
+    }
+
+    public function quizQuestions(){
+        $db=db_connect();
+        $model = new QuizModel($db);
+        $result['questions'] = $model->allQuestions();
+        // echo '<pre>';
+        // print_r($result['questions']);
+        // echo '<pre>';
+        return view('pages/questions_list',$result);
+    }
+    
+    public function questionWithOption($qtn_id){
+        $db=db_connect();
+        $model = new QuizModel($db);
+        $result['qna']=$model->questionWithOption($qtn_id);
+        return view('pages/quiz',$result);
     }
 
     public function keeper(){

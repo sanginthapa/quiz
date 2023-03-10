@@ -284,3 +284,304 @@ INFO - 2023-03-10 08:00:43 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-03-10 08:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-03-10 08:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 >>>>>>> 203b39a39fb6711cc4a59629fedba5a4d49502e5
+INFO - 2023-03-10 14:49:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 14:49:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 14:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 14:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 14:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-10 15:09:03 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Home.php on line 40.
+ 1 APPPATH\Controllers\Home.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Home.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->save_data()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 15:09:52 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Home.php on line 43.
+ 1 APPPATH\Controllers\Home.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Home.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->save_data()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-10 15:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:13:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:13:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:15:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-10 15:15:53 --> CodeIgniter\Database\BaseBuilder::get(): Argument #1 ($limit) must be of type ?int, string given, called in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Model.php on line 840
+in SYSTEMPATH\Database\BaseBuilder.php on line 1608.
+ 1 SYSTEMPATH\Model.php(840): CodeIgniter\Database\BaseBuilder->get('sangin20mi@gmail.com')
+ 2 APPPATH\Controllers\Home.php(48): CodeIgniter\Model->__call('get', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->save_data()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-03-10 15:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:16:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 15:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 16:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-03-10 16:31:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-03-10 16:36:37 --> Cannot use object of type stdClass as array
+in APPPATH\Controllers\Home.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:11:47 --> Undefined array key "question"
+in APPPATH\Controllers\Home.php on line 81.
+ 1 APPPATH\Controllers\Home.php(81): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "question"', 'APPPATH\\Controllers\\Home.php', 81)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:18:51 --> Invalid file: "questions_list.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('questions_list.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('questions_list', [], true)
+ 3 APPPATH\Controllers\Home.php(80): view('questions_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:19:18 --> Invalid file: "pages/questions_list.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/questions_list.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 3 APPPATH\Controllers\Home.php(80): view('pages/questions_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:19:44 --> Invalid file: "/pages/questions_list.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pages/questions_list.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('/pages/questions_list', [], true)
+ 3 APPPATH\Controllers\Home.php(80): view('/pages/questions_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:23:43 --> Invalid file: "pages/questions_list.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/questions_list.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 3 APPPATH\Controllers\Home.php(80): view('pages/questions_list', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:27:04 --> Invalid file: "pages/questions_list.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/questions_list.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 3 APPPATH\Controllers\Home.php(80): view('pages/questions_list')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:28:33 --> Cannot use object of type stdClass as array
+in APPPATH\Views\pages\questions_list.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 4 APPPATH\Controllers\Home.php(80): view('pages/questions_list', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:29:17 --> Array to string conversion
+in APPPATH\Views\pages\questions_list.php on line 4.
+ 1 APPPATH\Views\pages\questions_list.php(4): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Views\\pages\\questions_list.php', 4)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\questions_list.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 5 APPPATH\Controllers\Home.php(80): view('pages/questions_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:29:35 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\pages\questions_list.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 4 APPPATH\Controllers\Home.php(80): view('pages/questions_list', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:33:50 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\pages\questions_list.php on line 4.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 4 APPPATH\Controllers\Home.php(80): view('pages/questions_list', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:39:48 --> Too few arguments to function App\Models\QuizModel::__construct(), 0 passed in C:\xampp\htdocs\ci_projects\quiz\app\Controllers\Home.php on line 76 and exactly 1 expected
+in APPPATH\Models\QuizModel.php on line 8.
+ 1 APPPATH\Controllers\Home.php(76): App\Models\QuizModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 18:40:18 --> Attempt to read property "question" on array
+in APPPATH\Views\pages\questions_list.php on line 3.
+ 1 APPPATH\Views\pages\questions_list.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "question" on array', 'APPPATH\\Views\\pages\\questions_list.php', 3)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\questions_list.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/questions_list', [], true)
+ 5 APPPATH\Controllers\Home.php(81): view('pages/questions_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->quizQuestions()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:05:33 --> Undefined variable $user
+in APPPATH\Views\components\display_question.php on line 3.
+ 1 APPPATH\Views\components\display_question.php(3): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'APPPATH\\Views\\components\\display_question.php', 3)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\components\\display_question.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('components/display_question', [], true)
+ 5 APPPATH\Libraries\Home.php(11): view('components/display_question', [])
+ 6 SYSTEMPATH\View\Cell.php(281): App\Libraries\Home->quiz([])
+ 7 SYSTEMPATH\View\Cell.php(100): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Libraries\Home), 'quiz', [], 'App\\Libraries\\Home')
+ 8 SYSTEMPATH\Common.php(1200): CodeIgniter\View\Cell->render('\\App\\Libraries\\Home::quiz', [], 0, 'AppLibrariesHomequizdcca48101505dd86b703689a604fe3c4')
+ 9 APPPATH\Views\pages\quiz.php(5): view_cell('\\App\\Libraries\\Home::quiz')
+10 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+11 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+13 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+14 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+15 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+16 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-03-10 19:09:52 --> mysqli_sql_exception: Column 'question_id' in where clause is ambiguous in C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ci_projects\quiz\app\Models\QuizModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ci_projects\quiz\app\Controllers\Home.php(87): App\Models\QuizModel->questionWithOption('1')
+#6 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+#7 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\ci_projects\quiz\vendor\codeigniter4\framework\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ci_projects\quiz\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-03-10 19:09:52 --> Column 'question_id' in where clause is ambiguous
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `quiz_questions`
+JOIN `options_table` ON `quiz_questions`.`question_id` = `options_table`.`question_id`
+WHERE `question_id` = :question_id:', [...], false)
+ 2 APPPATH\Models\QuizModel.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Home.php(87): App\Models\QuizModel->questionWithOption('1')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:17:04 --> Attempt to read property "question" on array
+in APPPATH\Views\pages\quiz.php on line 6.
+ 1 APPPATH\Views\pages\quiz.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "question" on array', 'APPPATH\\Views\\pages\\quiz.php', 6)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:19:42 --> Cannot use object of type stdClass as array
+in APPPATH\Views\pages\quiz.php on line 6.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 4 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:20:17 --> syntax error, unexpected token ";"
+in APPPATH\Views\pages\quiz.php on line 6.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 3 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:21:32 --> Undefined variable $result
+in APPPATH\Views\pages\quiz.php on line 7.
+ 1 APPPATH\Views\pages\quiz.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $result', 'APPPATH\\Views\\pages\\quiz.php', 7)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:28:34 --> Undefined variable $result
+in APPPATH\Views\pages\quiz.php on line 22.
+ 1 APPPATH\Views\pages\quiz.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $result', 'APPPATH\\Views\\pages\\quiz.php', 22)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:30:41 --> Undefined array key 4
+in APPPATH\Views\pages\quiz.php on line 20.
+ 1 APPPATH\Views\pages\quiz.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 4', 'APPPATH\\Views\\pages\\quiz.php', 20)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 5 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:36:03 --> Undefined variable $question
+in APPPATH\Views\components\display_question.php on line 31.
+ 1 APPPATH\Views\components\display_question.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $question', 'APPPATH\\Views\\components\\display_question.php', 31)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\components\\display_question.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('components/display_question', [], true)
+ 5 APPPATH\Libraries\Home.php(11): view('components/display_question', [])
+ 6 SYSTEMPATH\View\Cell.php(281): App\Libraries\Home->quiz([])
+ 7 SYSTEMPATH\View\Cell.php(100): CodeIgniter\View\Cell->renderSimpleClass(Object(App\Libraries\Home), 'quiz', [], 'App\\Libraries\\Home')
+ 8 SYSTEMPATH\Common.php(1200): CodeIgniter\View\Cell->render('\\App\\Libraries\\Home::quiz', [], 0, 'AppLibrariesHomequizdcca48101505dd86b703689a604fe3c4')
+ 9 APPPATH\Views\pages\quiz.php(26): view_cell('\\App\\Libraries\\Home::quiz')
+10 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+11 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+12 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+13 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+14 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+15 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+16 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+17 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-03-10 19:36:49 --> Undefined array key 1
+in SYSTEMPATH\View\Cell.php on line 138.
+ 1 SYSTEMPATH\View\Cell.php(138): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 1', 'SYSTEMPATH\\View\\Cell.php', 138)
+ 2 SYSTEMPATH\View\Cell.php(96): CodeIgniter\View\Cell->prepareParams([...])
+ 3 SYSTEMPATH\Common.php(1200): CodeIgniter\View\Cell->render('\\App\\Libraries\\Home::quiz', 'Capital of Spain', 0, 'AppLibrariesHomequiz0e410477c7e371c246895387f12a10d4')
+ 4 APPPATH\Views\pages\quiz.php(26): view_cell('\\App\\Libraries\\Home::quiz', 'Capital of Spain')
+ 5 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\quiz.php')
+ 6 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 7 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/quiz', [], true)
+ 8 APPPATH\Controllers\Home.php(88): view('pages/quiz', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->questionWithOption('1')
+10 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+11 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

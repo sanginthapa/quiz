@@ -1,6 +1,6 @@
 <!-- layout container  -->
 <div>
-    <h1>Welcome to Quiz <?= $user ?>!</h1>
+    <h1>Welcome to Quiz <?= (isset($user)?$user:"no user") ?>!</h1>
     <!-- top bar section-->
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6 justify-content-between bg-light">
         <div class="col text-start">Quizzes</div>
@@ -28,31 +28,20 @@
         <div class="col-10 py-2">
             <div class="col-12">
                 <div class="col-12 p-4 d-flex justify-content-between">
-                    <div class="col-10 h4 text-center">Q. What is question?  </div>
+                    <div class="col-10 h4 text-center letter-specing-2">Q. <?= $question ?>?  </div>
                     <div class="col-2 text-end">Time Left : <strong id="timeout">20</strong></div>
                 </div>
-                <div class="col-12 text-center">
+                <!-- <div class="col-12 text-center">
                     <img src="/assets/images/team.jpg" alt="" style="height:auto;width:250px" >
-                </div>
-                <div class="col-12 container">
+                </div> -->
+                <div class="col-8 container m-auto">
                     <div class="container d-flex justify-content-between py-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6">
-                        <div class="col py-2">
-                            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
-                            <label class="btn w-100 btn-outline-primary" for="option1">OPTION 1</label>
+                        <?php foreach($option as $optn):?>
+                            <div class="col py-2">
+                            <input type="radio" class="btn-check" name="options" data-optn_id="<?= $optn->option_id; ?>" id="<?= $optn->option_name; ?>" autocomplete="off">
+                            <label class="btn w-100 btn-outline-primary" for="<?= $optn->option_name; ?>"><?= $optn->option_name; ?></label>
                         </div>
-                        <div class="col py-2">
-                            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
-                            <label class="btn w-100 btn-outline-primary" for="option2"> OPTION 2</label>
-                           </div>
-                        <div class="col py-2">
-                            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
-                            <label class="btn w-100 btn-outline-primary" for="option3"> OPTION 3</label>
-                        </div>
-                         <div class="col py-2">
-                            <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
-                            <label class="btn w-100 btn-outline-primary" for="option4"> OPTION 4</label>
-                        </div>
-                       
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
