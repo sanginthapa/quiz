@@ -51,14 +51,19 @@ class Home extends BaseController
                 if($num_rows>0){
                     $session = \Config\Services::session();
                     $session->set('active_email', $data['email']);
-                    return redirect()->to('/home/quizStart');;
+                    $link=$this->quizStart();
+                    return redirect()->to(base_url($link));
+                    // return redirect()->to('/home/quizStart');;
                 }else{
                     if($model->save($data)){
                         $session = \Config\Services::session();
                         $session->set('active_email', $data['email']);
-                        return redirect()->to('/home/quizStart');;
+                        // return redirect()->to('/home/quizStart');;
+                        $link=$this->quizStart();
+                        return redirect()->to(base_url($link));
                     }else{
-                        return redirect()->to('/home');;
+                        // return redirect()->to('/home');
+                        return '<div class="col-12 mb-5 text-center m-auto text-danger">Something Went wrong Please try again.</div>';
                     }
                 }
             }
@@ -78,11 +83,18 @@ class Home extends BaseController
             $questionIds[]=$ids['question_id'];
         }
         $session->set('questionSet', $questionIds);
+        $session->set('counter', 0);
+        $counter=$session->get('counter');
         $model = new QuizModel($db);
-        $question['qna']=$model->questionWithOption($questionIds[0]);
-        return view('pages/quiz',$question);
+        // $question['qna']=$model->questionWithOption($questionIds[0]);
+        // return view('pages/quiz',$question);
+        // echo $questionIds[0];
+        // $this->questionWithOption($questionIds[$counter]);
+        $link="home/questionWithOption/".$questionIds[$counter];
+        return $link;
+        // return redirect()->to($link);
     }
-
+    
     public function quizQuestions(){
         $db=db_connect();
         $model = new QuizModel($db);
@@ -92,7 +104,7 @@ class Home extends BaseController
         // echo '<pre>';
         return view('pages/questions_list',$result);
     }
-
+    
     public function getQuestionIds(){
         $db=db_connect();
         $model = new QuizModel($db);
@@ -104,16 +116,123 @@ class Home extends BaseController
         // print_r($result['question_ids']);
         // print_r($questionIds);
         // foreach($questionIds as $qid){
-        //     echo "<br>".$qid;
-        // }
-        return $questionIds;
+            //     echo "<br>".$qid;
+            // }
+            return $questionIds;
     }
-    
+        
     public function questionWithOption($qtn_id){
+        // echo "i am called";
         $db=db_connect();
-        $model = new QuizModel($db);
-        $result['qna']=$model->questionWithOption($qtn_id);
-        return view('pages/quiz',$result);
+        //setting veriables
+        $result=[];
+        $session = \Config\Services::session();
+        $questionSet=$session->get('questionSet');
+        $counter=$session->get('counter');
+        $prev=0;
+        if($counter==0){
+            $prev=0;
+        }else{
+            $prev=$counter-1;
+        }
+        $previous_qtn_id=$questionSet[$prev];
+        if($qtn_id==$previous_qtn_id){
+            //question id matched
+            $counter=$prev;
+            $counter=$counter+1;
+            $session->set('counter', $counter);
+            $model = new QuizModel($db);
+            $result['qna']=$model->questionWithOption($qtn_id);
+            $total=count($questionSet);
+            $result['percentage']=100-((($total-$counter)/$total)*100);
+            $result['counter']=$counter;
+            $result['total']=$total;
+            $result['active_email']=$session->get('active_email');
+            if($counter>=$total){
+                $counter=$total;
+                $result['showResult']='home/viewResult';
+            }
+            else{
+                $result['nextQtn']=$questionSet[$counter];
+            }
+            return view('pages/quiz',$result);
+        }
+        else if($this->request->getMethod()=='post'){
+            $submmit_data=[
+                'question_id' => $this->request->getPost('question_id'),
+                'option_id' => $this->request->getPost('option_id')
+            ];
+            print_r($submmit_data);
+            $validation = \Config\Services::validation();
+            $validation->setRules([
+                'question_id' => 'required',
+                'option_id' => 'required',
+                // Add validation rules for other fields here
+            ]);
+            
+            if (!$validation->run($submmit_data)){
+                $counter=$prev;
+                $counter=$counter+1;
+                $session->set('counter', $counter);
+                $model = new QuizModel($db);
+                $result['qna']=$model->questionWithOption($previous_qtn_id);
+                $total=count($questionSet);
+                $result['percentage']=100-((($total-$counter)/$total)*100);
+                $result['counter']=$counter;
+                $result['total']=$total;
+                $result['active_email']=$session->get('active_email');
+                $result['error_msg']="Must select the option.";
+                if($counter>=$total){
+                    $counter=$total;
+                    $result['showResult']='home/viewResult';
+                }
+                else{
+                    $result['nextQtn']=$questionSet[$counter];
+                }
+                return view('pages/quiz',$result);
+            }else{
+                //now insert save data
+                echo "now save data";
+                $counter=$counter+1;
+                $session->set('counter', $counter);
+                $model = new QuizModel($db);
+                $result['qna']=$model->questionWithOption($qtn_id);
+                $total=count($questionSet);
+                $result['percentage']=100-((($total-$counter)/$total)*100);
+                $result['counter']=$counter;
+                $result['total']=$total;
+                $result['active_email']=$session->get('active_email');
+                if($counter>=$total){
+                    $counter=$total;
+                    $result['showResult']='home/viewResult';
+                }
+                else{
+                    $result['nextQtn']=$questionSet[$counter];
+                }
+                return view('pages/quiz',$result);
+            }
+        }else{
+            echo "error processing data";
+        }
+        // else{
+        //     $counter=$counter+1;
+        //     $session->set('counter', $counter);
+        //     $model = new QuizModel($db);
+        //     $result['qna']=$model->questionWithOption($qtn_id);
+        //     $total=count($questionSet);
+        //     $result['percentage']=100-((($total-$counter)/$total)*100);
+        //     $result['counter']=$counter;
+        //     $result['total']=$total;
+        //     $result['active_email']=$session->get('active_email');
+        //     if($counter>=$total){
+        //         $counter=$total;
+        //         $result['showResult']='home/viewResult';
+        //     }
+        //     else{
+        //         $result['nextQtn']=$questionSet[$counter];
+        //     }
+        // }
+        // print_r($result);
     }
 
     public function keeper(){

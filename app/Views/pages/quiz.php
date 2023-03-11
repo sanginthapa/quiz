@@ -7,11 +7,14 @@
   $session = \Config\Services::session();
   $variable_value = $session->get('questionSet');
   print_r($variable_value);
+  
+$question_id='';
 $question='';
 $option[]=''; 
 $i=0;
 ?>
 <?php foreach($qna as $qn): 
+  $question_id=$qn->question_id;
   $question=$qn->question;
   $option[$i]=$qn->option_name; 
   $i++;
@@ -26,5 +29,5 @@ $i=0;
 </div>
 <?php endforeach; ?>
 <hr>
-<?= view_cell('\App\Libraries\Home::quiz',['question'=>$question,'option'=>$qna]) ?>
+<?= view_cell('\App\Libraries\Home::quiz',['question_id'=>$question_id,'question'=>$question,'option'=>$qna]) ?>
 <?= $this->endSection()?>

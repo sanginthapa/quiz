@@ -8,6 +8,12 @@ window.onload = function () {
 };
 // counter
 $(document).ready(function () {
+  //for selection quize option
+  $(".select_option").on('click',function(){
+    var optn_val = $(this).attr('data-optn_id');
+    $("#option_id").val(optn_val);
+  });
+
   //timer section
   var count = 16;
   var interval = setInterval(function () {
