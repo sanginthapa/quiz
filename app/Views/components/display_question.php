@@ -29,12 +29,12 @@
             <div class="col-12">
                 <div class="col-12 p-4 d-flex justify-content-between">
                     <div class="col-10 h4 text-center letter-specing-2">Q. <?= $question ?>?  </div>
-                    <div class="col-2 text-end">Time Left : <strong id="timeout">20</strong></div>
+                    <div class="col-2 text-end">Time Left : <strong id="timeout">15</strong></div>
                 </div>
                 <!-- <div class="col-12 text-center">
                     <img src="/assets/images/team.jpg" alt="" style="height:auto;width:250px" >
                 </div> -->
-                <div class="col-8 container m-auto">
+                <div class="col-auto container m-auto">
                     <div class="container d-flex justify-content-between py-3 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6">
                         <?php foreach($option as $optn):?>
                             <div class="col py-2">

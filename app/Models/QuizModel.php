@@ -21,4 +21,14 @@ class QuizModel{
                         ->get()
                         ->getResult();
     }
+
+    function randomQuestionIds(){
+        $builder = $this->db->table($this->table);
+        $builder->select('question_id')
+                ->orderBy('RAND()')
+                ->limit(10);
+        $query = $builder->get();
+        $question_ids = $query->getResultArray();
+        return $question_ids;
+    }
 }

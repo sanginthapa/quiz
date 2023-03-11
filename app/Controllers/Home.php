@@ -40,7 +40,9 @@ class Home extends BaseController
 
             if (!$validation->run($data)) {
                 // Validation failed, show error message or redirect to form page
-                return 'email format didnot match';
+                $data['validation']=$this->validator;
+                echo view('pages/home',$data);
+                return '<div class="col-12 mb-5 text-center m-auto text-danger">email format didnot match</div>';
             }else{
                 $db=db_connect();
                 $model= new StudentModel($db);
@@ -64,11 +66,21 @@ class Home extends BaseController
             echo "invalied request";
         }
     }
-
+    
     public function quizStart(){
         $session = \Config\Services::session();
         $variable_value = $session->get('active_email');
-        return view('pages/quiz',['user'=>$variable_value]);
+        $db=db_connect();
+        $model = new QuizModel($db);
+        $result['question_ids'] = $model->randomQuestionIds();
+        $questionIds=[];
+        foreach($result['question_ids'] as $ids){
+            $questionIds[]=$ids['question_id'];
+        }
+        $session->set('questionSet', $questionIds);
+        $model = new QuizModel($db);
+        $question['qna']=$model->questionWithOption($questionIds[0]);
+        return view('pages/quiz',$question);
     }
 
     public function quizQuestions(){
@@ -79,6 +91,22 @@ class Home extends BaseController
         // print_r($result['questions']);
         // echo '<pre>';
         return view('pages/questions_list',$result);
+    }
+
+    public function getQuestionIds(){
+        $db=db_connect();
+        $model = new QuizModel($db);
+        $result['question_ids'] = $model->randomQuestionIds();
+        $questionIds=[];
+        foreach($result['question_ids'] as $ids){
+            $questionIds[]=$ids['question_id'];
+        }
+        // print_r($result['question_ids']);
+        // print_r($questionIds);
+        // foreach($questionIds as $qid){
+        //     echo "<br>".$qid;
+        // }
+        return $questionIds;
     }
     
     public function questionWithOption($qtn_id){

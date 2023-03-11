@@ -9,7 +9,7 @@ window.onload = function () {
 // counter
 $(document).ready(function () {
   //timer section
-  var count = 20;
+  var count = 16;
   var interval = setInterval(function () {
     count--;
     if (count <= 5) {
@@ -25,7 +25,7 @@ $(document).ready(function () {
     $("#timeout").text(count);
     if (count == 0) {
       // clearInterval(interval); //uncomment to stop timer
-      count = 20;
+      count = 15;
       // location.reload();
       // add your code here to perform an action when the timer reaches zero
     }

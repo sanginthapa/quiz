@@ -7,7 +7,7 @@
       </div>
       <div class="form-group m-2">
         <label for="email">Email:</label>
-        <input id="email" class="form-control" type="email" name="email">
+        <input id="email" class="form-control" type="text" name="email">
       </div>
       <div class="form-group text-center">
         <button class="btn btn-primary mt-5">Start Quiz</button>

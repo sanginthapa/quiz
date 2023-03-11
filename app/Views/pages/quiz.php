@@ -4,6 +4,9 @@
 <?php //print_r($qna); ?>
 <hr>
 <?php
+  $session = \Config\Services::session();
+  $variable_value = $session->get('questionSet');
+  print_r($variable_value);
 $question='';
 $option[]=''; 
 $i=0;

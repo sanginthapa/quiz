@@ -1,4 +1,5 @@
-
+<?= $this->extend('./layouts/main')?>
+<?= $this->section('content')?>
 following are list of questions<br>
 <ol>
   
@@ -7,3 +8,4 @@ following are list of questions<br>
   <?php endforeach; ?>
 
 </ol>
+<?= $this->endSection()?>
