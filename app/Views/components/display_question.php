@@ -12,7 +12,7 @@
                 <div class="progress-bar" role="progressbar" style="width:<?= $percentage ?>%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
         </div>
-        <div class="col text-center">Question <strong><?= $counter ?></strong> of <?= $total;?> </div>
+        <div class="col text-center">Question <strong><?= ($counter==100?$counter/10:$counter) ?></strong> of <?= $total;?> </div>
         <div class="col text-end"><a type="button" class="btn-close" disabled aria-label="Close"></a>
         <!-- close --></div>
     </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-10 py-2">
             <!-- Quiz form  -->
-            <form method="post" action="<?= (isset($nextQtn)?$nextQtn:''); ?>">
+            <form method="post" action="<?= (isset($nextQtn)?$nextQtn:'SA1'); ?>">
                 <div class="col-12">
                     <div class="col-12 p-4 d-flex justify-content-between">
                         <input type="hidden" name="question_id" value="<?= $question_id; ?>">
@@ -67,13 +67,13 @@
         <div class="col-12 text-center mb-5"><button class="btn" style="background: #0f4ebf;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Next</button></div>
         <?php } 
         else if($counter>=$total){ ?>
-        <div class="col-12 text-center mb-5"><a href="<?= base_url($showResult) ?>" class="btn" style="background:green;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">View Result</a></div>
+        <div class="col-12 text-center mb-5"><button class="btn" style="background:green;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">View Result</button></div>
         <?php }
         ?>
         <?php 
         if(isset($error_msg)){
         ?>
-        <div class="col-12 text-danger m-auto"><?= $error_msg ?></div>
+        <div class="col-12 text-danger m-auto fs-3 text-center mb-5"><?= $error_msg ?></div>
         <?php }?>
     </form>
     <!-- Quiz form  -->

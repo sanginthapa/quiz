@@ -11,7 +11,7 @@ class AttemptModel extends Model
 
   protected $useAutoIncrement = true;
 
-  protected $allowedFields = ['student_id', 'question_id','option_id'];
+  protected $allowedFields = ['student_id', 'question_id','option_id','session_id'];
 
   // Dates
   protected $useTimestamps = true;

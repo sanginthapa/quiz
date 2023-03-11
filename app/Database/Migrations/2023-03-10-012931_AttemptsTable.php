@@ -30,6 +30,11 @@ class AttemptsTable extends Migration
                 'constraint' => '11',
                 'null'=>false,
             ],
+            'session_id'=>[
+                'type' => 'INT',
+                'constraint' => '11',
+                'null'=>false,
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
@@ -49,6 +54,7 @@ class AttemptsTable extends Migration
         $this->forge->addForeignKey('student_id', 'students', 'student_id');
         $this->forge->addForeignKey('option_id', 'options_table', 'option_id');
         $this->forge->addForeignKey('question_id', 'quiz_questions', 'question_id');
+        $this->forge->addForeignKey('session_id', 'quiz_sessions', 'session_id');
     }
 
     public function down()
