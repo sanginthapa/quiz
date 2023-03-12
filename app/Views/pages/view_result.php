@@ -25,7 +25,7 @@
       <td><?= $data->attempted ?></td>
       <td><?= $data->started_at; ?></td>
       <td><?= $data->time_consumed ?></td>
-      <td><?php $link="home/viewIndividual/".$data->student_id."/".$data->session_id; ?><a href="<?= base_url($link)?>">View</a></td>
+      <td><?php $link="home/individualReport/".$data->session_id; ?><a href="<?= base_url($link)?>">View</a></td>
     </tr>
     <?php  endforeach; ?>
   </tbody>

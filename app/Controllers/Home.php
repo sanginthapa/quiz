@@ -366,6 +366,14 @@ class Home extends BaseController
         return view('pages/individual_result',['result'=>$result]);
     }
 
+    public function individualReport($session_id){
+      echo "single session report of session id :".$session_id;
+      $db=db_connect();
+      $model=new QuizModel($db);
+      $result = $model->viewAllQnAofaSession($session_id);
+      print_r($result);
+    }
+
     public function keeper(){
         $db=db_connect();
         // $qn_model= new QuestionModel($db);
