@@ -21,7 +21,7 @@ class QuizSessionTable extends Migration
             ],
             'started_at' => [
                 'type' => 'DATETIME',
-                'default' => date('Y-m-d H:i:s'),
+                'null' => false,
             ],
             'ended_at' => [
                 'type' => 'DATETIME',
