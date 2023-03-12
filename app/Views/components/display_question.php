@@ -67,7 +67,7 @@
         <div class="col-12 text-center mb-5"><button class="btn" style="background: #0f4ebf;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Next</button></div>
         <?php } 
         else if($counter>=$total){ ?>
-        <div class="col-12 text-center mb-5"><button class="btn" style="background:green;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">View Result</button></div>
+        <div class="col-12 text-center mb-5"><button class="btn" style="background:green;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Subbmit</button></div>
         <?php }
         ?>
         <?php 

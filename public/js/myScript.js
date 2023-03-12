@@ -14,6 +14,7 @@ $(document).ready(function () {
     $("#option_id").val(optn_val);
   });
 
+  $(".select_option:first").attr("required","required");
   //timer section
   var count = 16;
   var interval = setInterval(function () {
@@ -30,8 +31,8 @@ $(document).ready(function () {
     }
     $("#timeout").text(count);
     if (count == 0) {
-      // clearInterval(interval); //uncomment to stop timer
-      count = 15;
+      clearInterval(interval); //uncomment to stop timer
+      // count = 15;
       // location.reload();
       // add your code here to perform an action when the timer reaches zero
     }

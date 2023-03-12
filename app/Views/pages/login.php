@@ -24,7 +24,6 @@
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
     <input type="email" class="form-control w-50" id="email" name="email" required>
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
