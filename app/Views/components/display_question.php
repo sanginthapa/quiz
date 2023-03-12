@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="col text-center">Question <strong><?= ($counter==100?$counter/10:$counter) ?></strong> of <?= $total;?> </div>
-        <div class="col text-end"><a type="button" class="btn-close" disabled aria-label="Close"></a>
+        <div class="col text-end"><a type="button" data-base_url="<?= base_url('/home') ?>" class="btn-close exit_quize" id="exit_quize" disabled aria-label="Close"></a>
         <!-- close --></div>
     </div>
     <!-- top bar section-->

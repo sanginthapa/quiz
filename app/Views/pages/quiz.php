@@ -1,6 +1,6 @@
 <?= $this->extend('./layouts/main')?>
 <?= $this->section('content')?>
-<h1 class="text-center">Quiz Maniya</h1>
+<h1 class="text-center mt-5">Quiz Maniya</h1>
 <?php //print_r($qna); ?>
 <hr>
 <?php

@@ -8,13 +8,22 @@ window.onload = function () {
 };
 // counter
 $(document).ready(function () {
+  //exit quize
+  $("#exit_quize").on("click", function () {
+    if (confirm("Are you sure you want to Quit??")) {
+      //redirect to home page
+      var link = $(this).attr("data-base_url");
+      alert(link);
+      window.location.href = link;
+    }
+  });
   //for selection quize option
-  $(".select_option").on('click',function(){
-    var optn_val = $(this).attr('data-optn_id');
+  $(".select_option").on("click", function () {
+    var optn_val = $(this).attr("data-optn_id");
     $("#option_id").val(optn_val);
   });
 
-  $(".select_option:first").attr("required","required");
+  $(".select_option:first").attr("required", "required");
   //timer section
   var count = 16;
   var interval = setInterval(function () {
