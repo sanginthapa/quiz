@@ -316,8 +316,12 @@ class Home extends BaseController
         // print_r($result);
     }
 
-    public function viewResult($email){
-        echo "All result shown here";
+    public function viewResult($student_id){
+        $db=db_connect();
+        $model=new QuizModel($db);
+        $result=$model->viewResult($student_id);
+        print_r($result);
+        return view('pages/view_result',['result'=>$result]);
     }
 
     public function viewScore($session_id){
@@ -327,10 +331,10 @@ class Home extends BaseController
         print_r($score);
     }
 
-    public function viewIndividualScore($session_id,$student_id){
+    public function viewIndividual($student_id,$session_id){
         $db=db_connect();
         $model=new QuizModel($db);
-        $result=$model->viewIndividualResult($session_id,$student_id);
+        $result=$model->viewIndividualResult($student_id,$session_id);
         print_r($result);
         return view('pages/individual_result',['result'=>$result]);
     }

@@ -53,18 +53,33 @@ class QuizModel{
         return $result;
       }
 
-      function viewIndividualResult($session_id,$student_id){
+      function viewResult($student_id){
         $query = $this->db->table('quiz_sessions')
-            ->select('quiz_sessions.session_id, quiz_sessions.student_id, students_table.student_name, quiz_sessions.started_at, quiz_sessions.ended_at, quiz_sessions.score, quiz_sessions.is_completed, TIMEDIFF(quiz_sessions.started_at, quiz_sessions.ended_at) AS time_consumed, 
-                      (SELECT COUNT(question_attempts.attempt_id) AS totalAttempt 
-                       FROM question_attempts 
-                       INNER JOIN quiz_sessions ON quiz_sessions.session_id = question_attempts.session_id 
-                       WHERE quiz_sessions.session_id = '.$session_id.') AS attempted')
-            ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
-            ->where('quiz_sessions.student_id', $student_id)
-            ->where('quiz_sessions.session_id', $session_id)
-            ->get();
-
+                        ->select('quiz_sessions.session_id, quiz_sessions.student_id, students_table.student_name, quiz_sessions.started_at, quiz_sessions.ended_at, quiz_sessions.score, quiz_sessions.is_completed, TIMEDIFF(quiz_sessions.started_at, quiz_sessions.ended_at) AS time_consumed, 
+                                (SELECT COUNT(question_attempts.attempt_id) AS attempted 
+                                FROM question_attempts 
+                                WHERE question_attempts.session_id = quiz_sessions.session_id) AS attempted')
+                        ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
+                        ->where('quiz_sessions.student_id', $student_id)
+                        ->orderBy('started_at', 'DESC')
+                        ->get();
+            // ->where('quiz_sessions.session_id', $session_id)
+            
+        $results = $query->getResult();
+        return $results;
+      }
+      function viewIndividualResult($student_id,$session_id){
+        $query = $this->db->table('quiz_sessions')
+                        ->select('quiz_sessions.session_id, quiz_sessions.student_id, students_table.student_name, quiz_sessions.started_at, quiz_sessions.ended_at, quiz_sessions.score, quiz_sessions.is_completed, TIMEDIFF(quiz_sessions.started_at, quiz_sessions.ended_at) AS time_consumed, 
+                                (SELECT COUNT(question_attempts.attempt_id) AS attempted 
+                                FROM question_attempts 
+                                WHERE question_attempts.session_id = quiz_sessions.session_id) AS attempted')
+                        ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
+                        ->where('quiz_sessions.student_id', $student_id)
+                        ->orderBy('started_at', 'DESC')
+                        ->get();
+            // ->where('quiz_sessions.session_id', $session_id)
+            
         $results = $query->getResult();
         return $results;
       }

@@ -26,13 +26,10 @@ Individual Result Page<br>
       <td><?= $data->attempted ?></td>
       <td><?= $data->started_at; ?></td>
       <td><?= $data->time_consumed ?></td>
-      <td><?= $data->session_id ?>Attempts</td>
+      <td><?php $link="home/viewIndividual/".$data->student_id."/".$data->session_id; ?><a href="<?= base_url($link)?>">View</a></td>
     </tr>
     <?php  endforeach; ?>
   </tbody>
 </table>
 <!-- //table  -->
-<ol>
-            <li><a href="<?= $data->student_name;?>"><?= $data->student_name; ?></a></li>
-</ol>
 <?= $this->endSection()?>
