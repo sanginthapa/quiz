@@ -30,7 +30,7 @@ class Home extends BaseController
             $session = \Config\Services::session();
             $data = [
                 'student_name' => $this->request->getPost('student_name'),
-                'email' => $this->request->getPost('email'),
+                'email' => $this->request->getPost('email')
                 // Add other fields here
             ];
             
@@ -255,10 +255,10 @@ class Home extends BaseController
                             'is_completed'=>true
                         ];
                         if($sessionModel->set($session_end_data)->where('session_id', $session_id)->update()){
-                            echo "success".$score;
+                            // echo "success".$score;
                             //then requrect to view Result page
-                            $link="home/viewResult/".$session->get('active_email');
-                            // return redirect()->to(base_url($link));
+                            $link="home/viewResult/".$session->get('student_id');
+                            return redirect()->to(base_url($link));
                         }
                     }
                     else if($counter==$total){
@@ -314,6 +314,33 @@ class Home extends BaseController
         //     }
         // }
         // print_r($result);
+    }
+
+    public function view_Result(){
+        if($this->request->getMethod()=='post'){
+            $validation = \Config\Services::validation();
+            $validation->setRules([
+                'email' => 'required|valid_email',
+                // Add validation rules for other fields here
+            ]);
+            $email['email']= $this->request->getPost('email');
+            if (!$validation->run($email)) {
+                // Validation failed, show error message or redirect to form page
+                return '<div class="col-12 mb-5 text-center m-auto text-danger">email format didnot match</div>';
+            }else{
+                $db=db_connect();
+                $model= new StudentModel($db);
+                $student_id = $model->getStudentId($email);
+                if($student_id==null){
+                    echo '<h3 style="text-align: center;margin-top:35vh;">Email NOT FOUND, please enter correct e-mail to proceed. &nbsp;<a href="'.base_url('home/view_Result').'"> <small> << Go back</small></a></h3>';
+                }else{
+                    $link="home/viewResult/".$student_id;
+                    return redirect()->to(base_url($link));
+                }
+            }
+        }else{
+            return view('pages/view_result_panel');
+        }
     }
 
     public function viewResult($student_id){

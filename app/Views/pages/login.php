@@ -20,14 +20,14 @@
         <div><?= $error ?></div>
     <?php endif ?>
     <div class="col-12 m-auto ms-5 mt-5">
-    <form action="Admin/login" method="post"> 
+    <form action="<?= base_url('admin/dashboard'); ?>" method="post"> 
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control w-50" id="email" name="email" required>
+    <input type="email" class="form-control w-50" value="admin@admin.com" id="email" name="email" required>
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control w-50" id="password" name="password" required>
+    <input type="password" class="form-control w-50" value="admin@123" id="password" name="password" required>
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>

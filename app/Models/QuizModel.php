@@ -83,4 +83,19 @@ class QuizModel{
         $results = $query->getResult();
         return $results;
       }
+
+      public function viewAllResult(){
+        $query = $this->db->table('quiz_sessions')
+                        ->select('quiz_sessions.session_id, quiz_sessions.student_id, students_table.student_name, quiz_sessions.started_at, quiz_sessions.ended_at, quiz_sessions.score, quiz_sessions.is_completed, TIMEDIFF(quiz_sessions.started_at, quiz_sessions.ended_at) AS time_consumed, 
+                                (SELECT COUNT(question_attempts.attempt_id) AS attempted 
+                                FROM question_attempts 
+                                WHERE question_attempts.session_id = quiz_sessions.session_id) AS attempted')
+                        ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
+                        ->orderBy('started_at', 'DESC')
+                        ->get();
+                        // ->where('quiz_sessions.student_id', $student_id)
+                        // ->where('quiz_sessions.session_id', $session_id)            
+        $results = $query->getResult();
+        return $results;
+      }
 }

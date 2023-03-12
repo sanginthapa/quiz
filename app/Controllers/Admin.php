@@ -18,40 +18,49 @@ class Admin extends BaseController
       return view('pages/login');
     }
 
-    public function login()
+    public function dashboard()
     {
-      $data = [];
       
       if ($this->request->getMethod() === 'post') {
-        $rules = [
-          'email' => 'required|valid_email',
-          'password' => 'required|min_length[6]',
+        $data = [
+          'email' => $this->request->getPost('email'),
+          'password' => $this->request->getPost('password')
         ];
-        
-        if ($this->validate($rules)) {
-          $model = new AdminModel();
-          $admin = $model->where('email', $this->request->getPost('email'))
-          ->first();
-          $password=$this->request->getPost('password');
-          if ($admin && password_verify($password, $admin['password'])) {
-            $session = \Config\Services::session();
-            $session->set('admin', $admin);
-            return redirect()->to('/dashboard');
-          } else {
-            $data['error'] = 'Invalid login credentials.';
-          }
-        } else {
-          $data['validation'] = $this->validator;
-        }
+        $validation = \Config\Services::validation();
+            $validation->setRules([
+                'email' => 'required|valid_email',
+                'password' => 'required|min_length[6]',
+            ]);
+
+            if (!$validation->run($data)) {
+                // Validation failed, show error message or redirect to form page
+                $data['validation']=$this->validator;
+                return '<h3 style="text-align: center;margin-top:35vh;">Wrong Email format didnot match. <a href="'.base_url('/admin').'"> Go Back </a></h3>';
+            }else{
+              $db=db_connect();
+              $model= new AdminModel($db);
+              $isAdmin=$model->where('email',$data['email'])
+                    ->where('password',$data['password'])
+                    ->first();
+
+              if($isAdmin){
+                $model=new QuizModel($db);
+                $result=$model->viewAllResult();
+                print_r($result);
+                return view('pages/dashboard',['result'=>$result]);
+              }else{
+                return '<h2 style="text-align: center;margin-top:35vh;">Wrong Email didnot match. <a href="'.base_url('/admin').'"> Go Back </a></h2>';
+              }
+            }
       }
 
-      return view('admin/login', $data);
+      // return view('admin/login', $data);
     }
 
     public function logout()
     {
       $session = \Config\Services::session();
       $session->remove('admin');
-      return redirect()->to('/');
+      return redirect()->to(base_url('/admin'));
     }
   }
