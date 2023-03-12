@@ -26,9 +26,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/home/view_result">View Result</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/home/quizQuestions">View Questions</a>
-          </li>
         </ul>
       </div>
     </div>

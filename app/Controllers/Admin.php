@@ -17,6 +17,7 @@ class Admin extends BaseController
     public function index(){
       $session = \Config\Services::session();
       if($session->get('admin')!=''){
+        $db=db_connect();
         $model=new QuizModel($db);
         $result=$model->viewAllResult();
         // print_r($result);

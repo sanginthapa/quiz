@@ -3,7 +3,7 @@
 ?>
 <!-- layout container  -->
 <div>
-    <h1>Welcome to Quiz <?= (isset($active_email)?$active_email:"no user") ?>!</h1>
+    <h5 class="text-center my-5">Welcome to Quiz <?= (isset($active_email)?$active_email:"no user") ?>!</h5>
     <!-- top bar section-->
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6 justify-content-between bg-light">
         <div class="col text-start">Quizzes</div>

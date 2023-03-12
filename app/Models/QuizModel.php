@@ -108,7 +108,7 @@ class QuizModel{
             (SELECT option_name from options_table WHERE question_id=quiz_questions.question_id AND is_correct=1) as correct_option_name')
             ->join('quiz_sessions', 'quiz_sessions.session_id = question_attempts.session_id')
             ->join('quiz_questions', 'quiz_questions.question_id = question_attempts.question_id')
-            ->where('quiz_sessions.session_id', 2)
+            ->where('quiz_sessions.session_id', $session_id)
             ->get();
       $result = $query->getResult();
       return $result;
