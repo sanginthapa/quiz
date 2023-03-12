@@ -98,4 +98,8 @@ class QuizModel{
         $results = $query->getResult();
         return $results;
       }
+
+      public function viewAllQnAofaSession($session_id){
+        
+      }
 }

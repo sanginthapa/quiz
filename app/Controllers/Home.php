@@ -347,7 +347,7 @@ class Home extends BaseController
         $db=db_connect();
         $model=new QuizModel($db);
         $result=$model->viewResult($student_id);
-        print_r($result);
+        // print_r($result);
         return view('pages/view_result',['result'=>$result]);
     }
 
@@ -355,14 +355,14 @@ class Home extends BaseController
         $db=db_connect();
         $model=new QuizModel($db);
         $score=$model->getScore($session_id);
-        print_r($score);
+        // print_r($score);
     }
 
     public function viewIndividual($student_id,$session_id){
         $db=db_connect();
         $model=new QuizModel($db);
         $result=$model->viewIndividualResult($student_id,$session_id);
-        print_r($result);
+        // print_r($result);
         return view('pages/individual_result',['result'=>$result]);
     }
 

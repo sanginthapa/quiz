@@ -15,11 +15,20 @@ use App\Models\QuizSessionModel;
 class Admin extends BaseController
 {
     public function index(){
-      return view('pages/login');
+      $session = \Config\Services::session();
+      if($session->get('admin')!=''){
+        $model=new QuizModel($db);
+        $result=$model->viewAllResult();
+        // print_r($result);
+        return view('pages/dashboard',['result'=>$result]);
+      }else{
+        return view('pages/login');
+      }
     }
 
     public function dashboard()
     {
+      $session = \Config\Services::session();
       
       if ($this->request->getMethod() === 'post') {
         $data = [
@@ -44,17 +53,29 @@ class Admin extends BaseController
                     ->first();
 
               if($isAdmin){
+                $session->set('admin',$data['email']);
                 $model=new QuizModel($db);
                 $result=$model->viewAllResult();
-                print_r($result);
+                // print_r($result);
                 return view('pages/dashboard',['result'=>$result]);
               }else{
                 return '<h2 style="text-align: center;margin-top:35vh;">Wrong Email didnot match. <a href="'.base_url('/admin').'"> Go Back </a></h2>';
               }
             }
+      }else if($session->get('admin')!=''){
+        $model=new QuizModel($db);
+        $result=$model->viewAllResult();
+        // print_r($result);
+        return view('pages/dashboard',['result'=>$result]);
+      }else{
+        return view('pages/login');
       }
 
       // return view('admin/login', $data);
+    }
+
+    public function singleReport($session_id){
+      echo "single session report of session id :".$session_id;
     }
 
     public function logout()
