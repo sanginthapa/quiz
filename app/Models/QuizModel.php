@@ -61,7 +61,7 @@ class QuizModel{
                                 WHERE question_attempts.session_id = quiz_sessions.session_id) AS attempted')
                         ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
                         ->where('quiz_sessions.student_id', $student_id)
-                        ->orderBy('started_at', 'DESC')
+                        ->orderBy('quiz_sessions.session_id', 'DESC')
                         ->get();
             // ->where('quiz_sessions.session_id', $session_id)
             
@@ -76,7 +76,7 @@ class QuizModel{
                                 WHERE question_attempts.session_id = quiz_sessions.session_id) AS attempted')
                         ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
                         ->where('quiz_sessions.student_id', $student_id)
-                        ->orderBy('started_at', 'DESC')
+                        ->orderBy('quiz_sessions.session_id', 'DESC')
                         ->get();
             // ->where('quiz_sessions.session_id', $session_id)
             
@@ -91,9 +91,10 @@ class QuizModel{
                                 FROM question_attempts 
                                 WHERE question_attempts.session_id = quiz_sessions.session_id) AS attempted')
                         ->join('students_table', 'quiz_sessions.student_id = students_table.student_id')
-                        ->orderBy('started_at', 'DESC')
+                        ->orderBy('quiz_sessions.session_id','desc')
                         ->get();
                         // ->where('quiz_sessions.student_id', $student_id)
+                        // ->orderBy('started_at', 'DESC')
                         // ->where('quiz_sessions.session_id', $session_id)            
         $results = $query->getResult();
         return $results;

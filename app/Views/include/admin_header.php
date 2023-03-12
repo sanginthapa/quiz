@@ -24,7 +24,7 @@
             <a class="nav-link active" aria-current="page" href="<?= base_url('/admin') ?>">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="logout">logout</a>
+            <a class="nav-link" aria-current="page" href="<?= base_url('/admin/logout') ?>">logout</a>
           </li>
         </ul>
       </div>
