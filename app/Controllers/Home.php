@@ -367,11 +367,12 @@ class Home extends BaseController
     }
 
     public function individualReport($session_id){
-      echo "single session report of session id :".$session_id;
+    //   echo "single session report of session id :".$session_id;
       $db=db_connect();
       $model=new QuizModel($db);
       $result = $model->viewAllQnAofaSession($session_id);
-      print_r($result);
+    //   print_r($result);
+      return view('pages/report_view',['result'=>$result]);
     }
 
     public function keeper(){
