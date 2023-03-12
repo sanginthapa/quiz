@@ -60,7 +60,7 @@ class Admin extends BaseController
                 // print_r($result);
                 return view('pages/dashboard',['result'=>$result]);
               }else{
-                return '<h2 style="text-align: center;margin-top:35vh;">Wrong Email didnot match. <a href="'.base_url('/admin').'"> Go Back </a></h2>';
+                return '<h2 style="text-align: center;margin-top:35vh;">Wrong Password or Email didnot match. <a href="'.base_url('/admin').'"> Go Back </a></h2>';
               }
             }
       }else if($session->get('admin')!=''){

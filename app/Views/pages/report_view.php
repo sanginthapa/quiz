@@ -1,6 +1,7 @@
 <?= $this->extend('./layouts/main')?>
 <?= $this->section('content')?>
-<div class="h3 text-center my-5">Report Page</div>
+<a href="<?= previous_url() ?>" class="btn bg-primary-subtle mt-5">Back</a>
+<div class="h3 text-center my-5 border-bottom border-3">Report Page</div>
 <!-- display card  -->
   <?php 
   //var for result
