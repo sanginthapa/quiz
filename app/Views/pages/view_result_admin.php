@@ -1,4 +1,4 @@
-<?= $this->extend('./layouts/adminmain')?>
+<?= $this->extend('./layouts/main')?>
 <?= $this->section('content')?>
 <div class="h3 text-center my-5">Result Page</div>
 <!-- //table  -->

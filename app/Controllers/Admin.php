@@ -63,6 +63,7 @@ class Admin extends BaseController
               }
             }
       }else if($session->get('admin')!=''){
+        $db=db_connect();
         $model=new QuizModel($db);
         $result=$model->viewAllResult();
         // print_r($result);
@@ -76,6 +77,10 @@ class Admin extends BaseController
 
     public function singleReport($session_id){
       echo "single session report of session id :".$session_id;
+      $db=db_connect();
+      $model=new QuizModel($db);
+      $result = $model->viewAllQnAofaSession($session_id);
+      print_r($result);
     }
 
     public function logout()

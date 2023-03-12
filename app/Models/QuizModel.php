@@ -100,6 +100,17 @@ class QuizModel{
       }
 
       public function viewAllQnAofaSession($session_id){
-        
+        $query=$this->db->table('question_attempts')
+            ->select('quiz_questions.question_id, quiz_questions.question, 
+            question_attempts.option_id as selected_option_id, 
+            (SELECT option_name from options_table WHERE option_id=question_attempts.option_id) as selected_option_name, 
+            (SELECT option_id from options_table WHERE question_id=quiz_questions.question_id AND is_correct=1) as correct_option_id, 
+            (SELECT option_name from options_table WHERE question_id=quiz_questions.question_id AND is_correct=1) as correct_option_name')
+            ->join('quiz_sessions', 'quiz_sessions.session_id = question_attempts.session_id')
+            ->join('quiz_questions', 'quiz_questions.question_id = question_attempts.question_id')
+            ->where('quiz_sessions.session_id', 2)
+            ->get();
+      $result = $query->getResult();
+      return $result;
       }
 }
