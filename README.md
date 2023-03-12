@@ -3,6 +3,12 @@
 there is a file name quiz.sql inside ADD\Database\Data\; can import and goo
 else you have to migrate tables and run sql in quizequestions.txt to goo.
 
+# admin login
+use localhost/admin
+
+# for normal user
+it is just localhost (note:you must define path to the folder in apach > config > httpd.config file
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
