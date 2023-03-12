@@ -1,6 +1,6 @@
 <?= $this->extend('./layouts/main')?>
 <?= $this->section('content')?>
-<div class="h3 text-center my-5">Result Page</div>
+<div class="h3 text-center my-5 border-bottom border-3">Result Page</div>
 <!-- //table  -->
 <table class="table">
   <thead>
@@ -25,7 +25,7 @@
       <td><?= $data->attempted ?></td>
       <td><?= $data->started_at; ?></td>
       <td><?= $data->time_consumed ?></td>
-      <td><?php $link="home/individualReport/".$data->session_id; ?><a href="<?= base_url($link)?>">View</a></td>
+      <td><?php $link="home/individualReport/".$data->session_id; ?><a class="viewBtn" href="<?= base_url($link)?>">View</a></td>
     </tr>
     <?php  endforeach; ?>
   </tbody>
