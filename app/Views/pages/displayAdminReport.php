@@ -34,7 +34,7 @@
         </div>
       <?php  endforeach; ?>
       <div class="col mb-5">
-                <div class="card my-4 <?php if($correct>7){echo "bg-success-subtle border border-success";}else if($correct>=5 || $correct<=7 ){echo "bg-warning-subtle border border-warning";} else if($correct<5){echo "bg-danger-subtle border border-danger";}?>">
+                <div class="card my-4 <?php if($correct>7){echo "bg-success-subtle border border-success";}else if($correct>=5 && $correct<=7 ){echo "bg-warning-subtle border border-warning";} else if($correct<=4){echo "bg-danger-subtle border border-danger";}?>">
             <h3 class="card-title ps-5 pt-4 pb-2">Score Board</h3>
             <div class="row card-body ps-5 pb-4 pt-2 d-flex">
               <div class="col fs-3">Correct : <strong><?= $correct; ?></strong></div>
