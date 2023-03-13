@@ -78,11 +78,16 @@ class Admin extends BaseController
 
     public function singleReport($session_id){
       // echo "single session report of session id :".$session_id;
-      $db=db_connect();
-      $model=new QuizModel($db);
-      $result = $model->viewAllQnAofaSession($session_id);
-      // print_r($result);
-      return view('pages/displayAdminReport',['result'=>$result]);
+      $session = \Config\Services::session();
+      if($session->get('admin')==''){
+        return view(base_url('/admin'));
+      }else{
+        $db=db_connect();
+        $model=new QuizModel($db);
+        $result = $model->viewAllQnAofaSession($session_id);
+        // print_r($result);
+        return view('pages/displayAdminReport',['result'=>$result]);
+      }
     }
 
     public function logout()
