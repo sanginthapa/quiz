@@ -29,4 +29,13 @@ class StudentModel extends Model
             return null;
         }
   }
+  public function getStudentDetails($email){
+    $student_id = $this->where('email', $email)->first();
+    // print_r($student_id);
+        if ($student_id) {
+            return $student_id;
+        } else {
+            return null;
+        }
+  }
 }
