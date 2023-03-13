@@ -23,7 +23,7 @@
                 <div class="col-2"><img style="width:20px;height:auto;" src="<?= base_url('assets/images/true.png')?>" alt="correct"></div>
                 <?php  }else if($data->selected_option_id!=$data->correct_option_id){ ?>
                   <?php $wrong++?>
-                <div class="col-2 p-2 me-3 bg-danger-subtle border border-danger rounded-pill text-center"><?= $data->selected_option_name ?></div>
+                <div class="col-2 p-2 me-3 bg-danger-subtle border border-danger rounded-pill text-center"><?= ($data->selected_option_name1='')?$data->selected_option_name1:"Time Out skip"; ?></div>
                 <div class="col-2"><img style="width:20px;height:auto;" src="<?= base_url('assets/images/false.png')?>" alt="Wrong"></div>
                 <div class="col-2 p-2 bg-success-subtle border border-success rounded-pill text-center"><?= $data->correct_option_name ?></div>
             <?php }

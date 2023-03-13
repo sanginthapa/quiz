@@ -30,7 +30,7 @@ class Admin extends BaseController
     public function dashboard()
     {
       $session = \Config\Services::session();
-      
+      helper('form');
       if ($this->request->getMethod() === 'post') {
         $data = [
           'email' => $this->request->getPost('email'),

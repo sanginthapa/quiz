@@ -64,10 +64,10 @@
             </div>
         </div>
         <?php if($counter<$total){ ?>
-        <div class="col-12 text-center mb-5"><button class="btn" style="background: #0f4ebf;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Next</button></div>
+        <div class="col-12 text-center mb-5"><button id="submmitAns" class="btn" style="background: #0f4ebf;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Next</button></div>
         <?php } 
         else if($counter>=$total){ ?>
-        <div class="col-12 text-center mb-5"><button class="btn" style="background:green;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Subbmit</button></div>
+        <div class="col-12 text-center mb-5"><button id="submmitAns" class="btn" style="background:green;border-radius: 4px;border: 1px;color:white;padding: 10px 40px;">Submit</button></div>
         <?php }
         ?>
         <?php 
@@ -81,3 +81,59 @@
     </div>
 <!-- layout container  -->
 
+<!-- on page script  -->
+<script>
+    $(document).ready(function () {
+  //exit quize
+  $("#exit_quize#exit_quize").on("click", function () {
+    if (confirm("Are you sure you want to Quit??")) {
+      //redirect to home page
+      var link = $(this).attr("data-base_url");
+      // alert(link);
+      window.location.href = link;
+    }
+  });
+  //for selection quize option
+  $(".select_option").on("click", function () {
+    var optn_val = $(this).attr("data-optn_id");
+    $("#option_id").val(optn_val);
+  });
+
+  $(".select_option:first").attr("required", "required");
+  //timer section
+  var count = 16;
+  var interval = setInterval(function () {
+    count--;
+    if (count <= 5) {
+      $("#timeout").css("border-color", "red");
+      $("#timeout").css("background", "#dc353547");
+    } else if (count > 5 && count < 10) {
+      $("#timeout").css("border-color", "#e7bc00");
+      $("#timeout").css("background", "#e7bc0038");
+    } else if (count > 10) {
+      $("#timeout").css("border-color", "green");
+      $("#timeout").css("background", "#02d07154");
+    }
+    $("#timeout").text(count);
+    if (count == 0) {
+  $(".select_option").removeAttr("required", "required");
+  $("#timeout").addClass("text-danger");
+  $("#timeout").parent().addClass('showMsg');
+  $(".showMsg").empty();
+  $(".showMsg").addClass("text-danger");
+  $(".showMsg").attr("id","timeout");
+  $(".showMsg").text("Time Out");
+    $("#option_id").val(0);
+      clearInterval(interval); //uncomment to stop timer
+      if(confirm("Time Out, Do you want to continue to next question or exit ?")){
+        $("#submmitAns").click();
+      }else{
+        var link = $("#exit_quize").attr("data-base_url");
+        // alert(link);
+        window.location.href =link;
+      }
+    }
+  }, 1000);
+});
+</script>
+<!-- on page script  -->

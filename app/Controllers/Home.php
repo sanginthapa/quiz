@@ -26,6 +26,7 @@ class Home extends BaseController
     
     public function save_data()
     {
+        helper('form');
         if($this->request->getMethod()=='post'){
             $session = \Config\Services::session();
             $data = [
